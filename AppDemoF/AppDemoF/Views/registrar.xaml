@@ -23,8 +23,10 @@
                 <Label
                     Text="Registrar Usuario"
                     TextColor="Black"
-                    FontSize="{OnPlatform Android=15,iOS=23}"
+                    FontSize="{OnPlatform Android=17,iOS=23}"
                     WidthRequest="300"
+                    FontAttributes="Bold, Italic"
+                    XAlign="Center"
                     />
             </StackLayout>
             <StackLayout Grid.Row="2" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">

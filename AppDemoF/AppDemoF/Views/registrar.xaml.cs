@@ -60,14 +60,13 @@ namespace AppDemoF.Views
                         break;
                     case "user":
                         string auxUser = eliminarCaracteres(b).Remove(0, 1).Trim();
-
+                        await DisplayAlert("Usuario Registrado",nombre+" "+apellido, "OK");
                         await Navigation.PushAsync(new dashboard(auxUser));
                         break;
 
                 }
 
-                Console.WriteLine(b);
-
+        
 
 
             }

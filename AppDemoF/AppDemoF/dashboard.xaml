@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDemoF.dashboard">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Text="Usuarios" x:Name="toobarUser" Priority="0"/>
-        <ToolbarItem Order="Primary" Text="Carrera" x:Name="toobarCarrera" Priority="0"/>
-        <ToolbarItem Order="Primary" Text="Carrera" x:Name="toobarCarrera" Priority="0"/>
+        
+        <ToolbarItem Order="Primary" Text="Inicio" x:Name="toobarCarrera2" Priority="0" Clicked="Btn_inicio"/>
+        <ToolbarItem Order="Primary" Text="Tareas" x:Name="toobarCarrera3" Priority="0" Clicked="Btn_tareas"/>
+        <ToolbarItem Order="Primary" Text="Cerrar Sesión" x:Name="toobarCarrera1" Priority="0" Clicked="Btn_close"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
 

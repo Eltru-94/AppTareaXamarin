@@ -1,4 +1,16 @@
-﻿using System;
+﻿
+
+
+
+
+
+
+
+
+
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,55 +19,54 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace AppDemoF
+namespace AppDemoF.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class dashboard : ContentPage
+    public partial class tareas : ContentPage
     {
-        
-        Services.ApiService ModelUser;
+        string cadena;
+        Services.ServiceTask ObjServiceTask;
         string nombre;
         string apellido;
         string correo;
-        string cadena;
         int id_user;
-        public dashboard(string cadena)
+        public tareas(string cadena)
         {
-            
-            ModelUser = new Services.ApiService();
-            this.cadena = cadena;
             InitializeComponent();
+            ObjServiceTask = new Services.ServiceTask();
+            this.cadena = cadena;
             datos(cadena);
-
-            
+            allTasks();
         }
 
-
-
-        private async void Btn_close(object sender, EventArgs e)
+        private async void Btn_addtarea(object sender, EventArgs e)
         {
 
-            bool answer = await DisplayAlert("Esta seguro?", "Cerrar Sesión", "Yes", "No");
-            if (answer)
-            {
-                await Navigation.PushAsync(new login());
-            }
-            
-            
-        }
-        
 
-        private async void Btn_inicio(object sender, EventArgs e)
-        {
+            await Navigation.PushAsync(new Views.addTareas(cadena));
 
-            
-                await Navigation.PushAsync(new dashboard(cadena));
+
         }
         private async void Btn_tareas(object sender, EventArgs e)
         {
 
 
             await Navigation.PushAsync(new Views.tareas(cadena));
+        }
+        private async void Btn_inicio(object sender, EventArgs e)
+        {
+
+
+            await Navigation.PushAsync(new dashboard(cadena));
+        }
+
+
+        public async void allTasks()
+        {
+
+            var tasks = await ObjServiceTask.allTaskUser(id_user.ToString());
+            listask.ItemsSource = tasks;
+
         }
         public void datos(string cadena)
         {
@@ -73,8 +84,19 @@ namespace AppDemoF
             nombre = auxnombre.Substring(1);
             apellido = auxapellido.Substring(1);
             correo = auxcorreo.Substring(1);
-            lblmensajeUser.Text = "Nombre : "+nombre + " " + apellido;
-            lblmensajeUseraux.Text = "Correo : "+correo;
+
+        }
+
+        private async void Btn_deleteTask(object sender, EventArgs e)
+        {
+
+            string id_task = ((Button)sender).BindingContext as string;
+            bool answer = await DisplayAlert("Esta seguro?", "Eliminar Tarea", "Yes", "No");
+            if (answer)
+            {
+                await ObjServiceTask.deletTask(id_task);
+                await Navigation.PushAsync(new Views.tareas(cadena));
+            }
         }
     }
 }

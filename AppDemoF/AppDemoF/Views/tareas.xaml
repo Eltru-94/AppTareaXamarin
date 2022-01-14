@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDemoF.Views.tareas">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Order="Primary" Text="Inicio" x:Name="toobarCarrera2" Priority="0" Clicked="Btn_inicio"/>
+        <ToolbarItem Order="Primary" Text="Tareas" x:Name="toobarCarrera3" Priority="0" Clicked="Btn_tareas"/>
+        <ToolbarItem Order="Primary" Text="Nueva Tarea" x:Name="toobarCarrera1" Priority="0" Clicked="Btn_addtarea"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid RowSpacing="{OnPlatform iOS=20, Android=20}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
+                <Label
+                    Text="Tareas"
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=17,iOS=23}"
+                    WidthRequest="300"
+                    FontAttributes="Bold, Italic"
+                    XAlign="Center"
+                    />
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+
+                <ListView x:Name="listask" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" >
+                            
+                                    <Label Text="{Binding task}" TextColor="#f35e20" FontSize="15"/>
+                                    <Label Text="{Binding descripcion}" TextColor="#503026" FontSize="15"  />
+                                    <Button Text="Eliminar"
+                                    TextColor="{OnPlatform iOS=Black}"
+                                    FontSize="{OnPlatform Android=9, iOS=12}"
+                                    BackgroundColor="#dc3545"
+                                    
+                                    HorizontalOptions="EndAndExpand"
+                                    BorderColor="White"
+                                    BorderWidth="1"
+                                    CornerRadius="7"
+                                    WidthRequest="80"
+                                    HeightRequest="20"
+                                    BindingContext="{Binding id_task}"
+                                    Clicked="Btn_deleteTask"
+                                            
+                                    />
+                                    <Button Text="Editar"
+                                    TextColor="{OnPlatform iOS=Black}"
+                                    FontSize="{OnPlatform Android=9, iOS=12}"
+                                    BackgroundColor="#007bff"
+                                    
+                                    HorizontalOptions="EndAndExpand"
+                                    BorderColor="White"
+                                    BorderWidth="1"
+                                    CornerRadius="7"
+                                    WidthRequest="80"
+                                    HeightRequest="20"
+                                    BindingContext="{Binding id_task}"
+                          
+                                            
+                                    />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
