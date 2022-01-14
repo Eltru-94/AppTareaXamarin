@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDemoF.login">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Text="Registrar" Clicked="Btn_ViewRegistrar" Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid RowSpacing="{OnPlatform iOS=25, Android=20}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="1">
+                
+
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center"  Orientation="Vertical">
+                <Label
+                    Text="Sign up"
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=30,iOS=23}"
+                    WidthRequest="300"
+                    />
+
+            </StackLayout>
+            <StackLayout Grid.Row="3" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+
+                <Label
+                    Text="Email : "
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=15}"
+               
+                />
+                <Frame
+                HasShadow="{OnPlatform Android=true, iOS=false}"
+                Padding="{OnPlatform Android=0, iOS=0}"
+                CornerRadius="{OnPlatform Android=7}"
+                >
+                    <Entry
+                    Placeholder="email@gmail.com"
+                    MaxLength="25"
+                    FontSize="{OnPlatform Android=15, iOS=16}"
+                    x:Name="txtemail"
+                    />
+                    
+
+                </Frame>
+                <Label
+                    Text=""
+                    TextColor="Red"
+                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    WidthRequest="300"
+                    x:Name="lblmensajecorreo"
+                    />
+
+            </StackLayout>
+            <StackLayout Grid.Row="4" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+                <Label
+                    Text="Password : "
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=15}"
+               
+                    />
+                <Frame
+                HasShadow="{OnPlatform Android=true, iOS=false}"
+                Padding="{OnPlatform Android=0, iOS=0}"
+                CornerRadius="{OnPlatform Android=7}"
+                >
+                    <Entry
+                    Placeholder="********"
+                    MaxLength="25"
+                    IsPassword="True"
+                    FontSize="{OnPlatform Android=15, iOS=16}"
+                    x:Name="txtpassword"
+                    />
+
+                </Frame>
+                <Label
+                    Text=""
+                    TextColor="Red"
+                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    WidthRequest="300"
+                    x:Name="lblmensajeclave"
+                    />
+
+            </StackLayout>
+        
+            <StackLayout Grid.Row="5" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+                <Button Text="Iniciar Sesion"
+                        TextColor="{OnPlatform iOS=Black}"
+                        FontSize="{OnPlatform Android=15, iOS=12}"
+                        BackgroundColor="#007bff"
+                        Clicked="Button_Clicked"
+                        />
+            </StackLayout>
+            
+
+            
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

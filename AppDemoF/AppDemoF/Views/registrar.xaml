@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDemoF.Views.registrar">
+    <ContentPage.Content>
+        <Grid RowSpacing="{OnPlatform iOS=20, Android=20}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+       
+            <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
+                <Label
+                    Text="Registrar Usuario"
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
+                    WidthRequest="300"
+                    />
+            </StackLayout>
+            <StackLayout Grid.Row="2" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+
+                <Label
+                    Text="Nombre : "
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=10}"
+                />
+                <Frame
+                HasShadow="{OnPlatform Android=true, iOS=false}"
+                Padding="{OnPlatform Android=0, iOS=0}"
+                CornerRadius="{OnPlatform Android=7}"
+                >
+                    <Entry
+                    Placeholder="Ingrese el nombre"
+                    MaxLength="25"
+                    FontSize="{OnPlatform Android=12, iOS=16}"
+                    x:Name="txtnombre"
+                    />
+
+                </Frame>
+                <Label
+                    Text=""
+                    TextColor="Red"
+                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    WidthRequest="300"
+                    x:Name="lblmensajenombre"
+                    />
+
+            </StackLayout>
+            <StackLayout Grid.Row="3" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+
+                <Label
+                    Text="Apellido : "
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=10}"
+               
+                />
+                <Frame
+                HasShadow="{OnPlatform Android=true, iOS=false}"
+                Padding="{OnPlatform Android=0, iOS=0}"
+                CornerRadius="{OnPlatform Android=7}"
+                >
+                    <Entry
+                    Placeholder="Ingrese el apellido"
+                    MaxLength="25"
+                    FontSize="{OnPlatform Android=12, iOS=16}"
+                    x:Name="txtapellido"
+                    />
+
+                </Frame>
+                <Label
+                    Text=""
+                    TextColor="Red"
+                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    WidthRequest="300"
+                    x:Name="lblmensajeapellido"
+                    />
+
+            </StackLayout>
+          
+            <StackLayout Grid.Row="4" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+                <Label
+                    Text="Correo : "
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=10}"
+               
+                    />
+                <Frame
+                HasShadow="{OnPlatform Android=true, iOS=false}"
+                Padding="{OnPlatform Android=0, iOS=0}"
+                CornerRadius="{OnPlatform Android=7}"
+                >
+                    <Entry
+                    Placeholder="Correo"
+                    FontSize="{OnPlatform Android=12, iOS=16}"
+                    x:Name="txtcorreo"
+                    />
+                    
+
+                </Frame>
+                <Label
+                    Text=""
+                    TextColor="Red"
+                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    WidthRequest="300"
+                    x:Name="lblmensajecorreo"
+                    />
+
+            </StackLayout>
+            <StackLayout Grid.Row="5" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+                <Label
+                    Text="Contraseña : "
+                    TextColor="Black"
+                    FontSize="{OnPlatform Android=10}"
+                    />
+                <Frame
+                HasShadow="{OnPlatform Android=true, iOS=false}"
+                Padding="{OnPlatform Android=0, iOS=0}"
+                CornerRadius="{OnPlatform Android=7}"
+                >
+                    <Entry
+                    Placeholder="Ingrese la contraseña"
+                    MaxLength="25"
+                    IsPassword="True"
+                    FontSize="{OnPlatform Android=12, iOS=16}"
+                    x:Name="txtpassword"
+                    />
+                    
+                </Frame>
+                <Label
+                    Text=""
+                    TextColor="Red"
+                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    WidthRequest="300"
+                    x:Name="lblmensajeclave"
+                    />
+
+            </StackLayout>
+ 
+            <StackLayout Grid.Row="6" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=200,Android=300}" Orientation="Vertical">
+                <Button Text="Registrar Usuario"
+                        TextColor="{OnPlatform iOS=Black}"
+                        FontSize="{OnPlatform Android=12, iOS=12}"
+                        BackgroundColor="#007bff"
+                        x:Name="Registrar"
+                        Clicked="store"
+                        />
+            </StackLayout>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
