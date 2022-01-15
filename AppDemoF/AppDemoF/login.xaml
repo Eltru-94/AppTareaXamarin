@@ -51,6 +51,8 @@
                 >
                     <Entry
                     Placeholder="Ingrese el email"
+                    PlaceholderColor="Gray"
+                    TextColor="Black"
                     MaxLength="25"
                     FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtemail"
@@ -82,6 +84,8 @@
                     <Entry
                     Placeholder="********"
                     MaxLength="25"
+                    PlaceholderColor="Gray"
+                    TextColor="Black"
                     IsPassword="True"
                     FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtpassword"

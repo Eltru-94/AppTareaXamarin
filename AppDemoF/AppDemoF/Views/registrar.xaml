@@ -45,6 +45,8 @@
                     <Entry
                     Placeholder="Ingrese el nombre"
                     MaxLength="25"
+                    PlaceholderColor="Gray"
+                    TextColor="Black"
                     FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtnombre"
                     />
@@ -75,6 +77,8 @@
                     <Entry
                     Placeholder="Ingrese el apellido"
                     MaxLength="25"
+                    PlaceholderColor="Gray"
+                    TextColor="Black"
                     FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtapellido"
                     />
@@ -106,6 +110,8 @@
                     Placeholder="Correo"
                     FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtcorreo"
+                    PlaceholderColor="Gray"
+                    TextColor="Black"
                     />
                     
 
@@ -136,6 +142,8 @@
                     IsPassword="True"
                     FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtpassword"
+                    PlaceholderColor="Gray"
+                    TextColor="Black"    
                     />
                     
                 </Frame>

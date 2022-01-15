@@ -49,6 +49,8 @@
                     <Entry
                     Placeholder="Ingrese la tarea"
                     MaxLength="25"
+                    PlaceholderColor="Gray"
+                    TextColor="Black"
                     FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txttarea"
                         
@@ -68,7 +70,7 @@
 
                 <Label
                     Text="Descripción : "
-                    TextColor="Gray"
+                    TextColor="Black"
                     FontSize="{OnPlatform Android=20}"
                
                 />
@@ -87,6 +89,7 @@
                     TextColor="Red"
                     FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
+         
                     x:Name="lblmensajedescripcion"
                     />
 
