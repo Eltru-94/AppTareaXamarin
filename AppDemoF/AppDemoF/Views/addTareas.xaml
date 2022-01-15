@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppDemoF.Views.addTareas">
+             x:Class="AppDemoF.Views.addTareas"
+                Background="#112B47">
     <ContentPage.ToolbarItems>
         
         <ToolbarItem Order="Primary" Text="Tareas" x:Name="toobarCarrera2" Priority="0" Clicked="Btn_tareas"/>
@@ -26,10 +27,10 @@
             <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
                 <Label
                     Text="Registrar Tarea"
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=18,iOS=23}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=50,iOS=23}"
                     WidthRequest="300"
-                    FontAttributes="Bold, Italic"
+                    FontAttributes="Bold"
                     XAlign="Center"
                     />
             </StackLayout>
@@ -37,8 +38,8 @@
 
                 <Label
                     Text="Tarea : "
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=12}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
                 />
                 <Frame
                 HasShadow="{OnPlatform Android=true, iOS=false}"
@@ -48,7 +49,7 @@
                     <Entry
                     Placeholder="Ingrese la tarea"
                     MaxLength="25"
-                    FontSize="{OnPlatform Android=14, iOS=16}"
+                    FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txttarea"
                         
                     />
@@ -57,7 +58,7 @@
                 <Label
                     Text=""
                     TextColor="Red"
-                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
                     x:Name="lblmensajetarea"
                     />
@@ -67,8 +68,8 @@
 
                 <Label
                     Text="Descripción : "
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=12}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
                
                 />
                
@@ -78,13 +79,13 @@
                 CornerRadius="{OnPlatform Android=7}"
                 >
 
-                    <Editor Text=""  HeightRequest="100" x:Name="txtadescripcion" FontSize="{OnPlatform Android=14,iOS=23}" />
+                    <Editor Text=""  HeightRequest="100" x:Name="txtadescripcion" FontSize="{OnPlatform Android=20,iOS=23}" />
 
                 </Frame>
                 <Label
                     Text=""
                     TextColor="Red"
-                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
                     x:Name="lblmensajedescripcion"
                     />
@@ -94,11 +95,14 @@
         
 
             <StackLayout Grid.Row="4" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=200,Android=300}" Orientation="Vertical">
+                
                 <Button Text="Registrar Tarea"
-                        TextColor="{OnPlatform iOS=Black}"
-                        FontSize="{OnPlatform Android=12, iOS=12}"
-                        BackgroundColor="#007bff"
-                        x:Name="Registrar"
+                        TextColor="White"
+                        FontSize="{OnPlatform Android=15, iOS=12}"
+                        BackgroundColor="Transparent"
+                        BorderColor="ForestGreen"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
                         Clicked="Btn_saveTask"
                         />
             </StackLayout>

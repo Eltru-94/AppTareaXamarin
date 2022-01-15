@@ -1,15 +1,4 @@
 ﻿
-
-
-
-
-
-
-
-
-
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,7 +53,7 @@ namespace AppDemoF.Views
         public async void allTasks()
         {
 
-            var tasks = await ObjServiceTask.allTaskUser(id_user.ToString());
+            List<Model.Tasks> tasks = await ObjServiceTask.allTaskUser(id_user.ToString());
             listask.ItemsSource = tasks;
 
         }
@@ -91,11 +80,23 @@ namespace AppDemoF.Views
         {
 
             string id_task = ((Button)sender).BindingContext as string;
-            bool answer = await DisplayAlert("Esta seguro?", "Eliminar Tarea", "Yes", "No");
+            bool answer = await DisplayAlert("Esta seguro?", "Eliminar Tarea", "Si", "No");
             if (answer)
             {
                 await ObjServiceTask.deletTask(id_task);
                 await Navigation.PushAsync(new Views.tareas(cadena));
+            }
+        }
+
+        private async void Btn_updateTask(object sender, EventArgs e)
+        {
+
+            string id_task = ((Button)sender).BindingContext as string;
+            bool answer = await DisplayAlert("Esta seguro?", "Actualizar Tarea", "Si", "No");
+            if (answer)
+            {
+               
+               await Navigation.PushAsync(new Views.editTareas(cadena,id_task));
             }
         }
     }

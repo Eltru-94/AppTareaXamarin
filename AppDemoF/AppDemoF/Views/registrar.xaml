@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppDemoF.Views.registrar">
+             x:Class="AppDemoF.Views.registrar"
+              Background="#112B47">
     <ContentPage.Content>
         <Grid RowSpacing="{OnPlatform iOS=20, Android=20}">
 
@@ -22,8 +23,8 @@
             <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
                 <Label
                     Text="Registrar Usuario"
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=17,iOS=23}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=50,iOS=23}"
                     WidthRequest="300"
                     FontAttributes="Bold, Italic"
                     XAlign="Center"
@@ -33,8 +34,8 @@
 
                 <Label
                     Text="Nombre : "
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=10}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
                 />
                 <Frame
                 HasShadow="{OnPlatform Android=true, iOS=false}"
@@ -44,7 +45,7 @@
                     <Entry
                     Placeholder="Ingrese el nombre"
                     MaxLength="25"
-                    FontSize="{OnPlatform Android=12, iOS=16}"
+                    FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtnombre"
                     />
 
@@ -52,7 +53,7 @@
                 <Label
                     Text=""
                     TextColor="Red"
-                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
                     x:Name="lblmensajenombre"
                     />
@@ -62,8 +63,8 @@
 
                 <Label
                     Text="Apellido : "
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=10}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
                
                 />
                 <Frame
@@ -74,7 +75,7 @@
                     <Entry
                     Placeholder="Ingrese el apellido"
                     MaxLength="25"
-                    FontSize="{OnPlatform Android=12, iOS=16}"
+                    FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtapellido"
                     />
 
@@ -82,7 +83,7 @@
                 <Label
                     Text=""
                     TextColor="Red"
-                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
                     x:Name="lblmensajeapellido"
                     />
@@ -92,8 +93,8 @@
             <StackLayout Grid.Row="4" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
                 <Label
                     Text="Correo : "
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=10}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
                
                     />
                 <Frame
@@ -103,7 +104,7 @@
                 >
                     <Entry
                     Placeholder="Correo"
-                    FontSize="{OnPlatform Android=12, iOS=16}"
+                    FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtcorreo"
                     />
                     
@@ -112,7 +113,7 @@
                 <Label
                     Text=""
                     TextColor="Red"
-                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
                     x:Name="lblmensajecorreo"
                     />
@@ -121,8 +122,8 @@
             <StackLayout Grid.Row="5" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
                 <Label
                     Text="Contraseña : "
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=10}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
                     />
                 <Frame
                 HasShadow="{OnPlatform Android=true, iOS=false}"
@@ -133,7 +134,7 @@
                     Placeholder="Ingrese la contraseña"
                     MaxLength="25"
                     IsPassword="True"
-                    FontSize="{OnPlatform Android=12, iOS=16}"
+                    FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtpassword"
                     />
                     
@@ -141,7 +142,7 @@
                 <Label
                     Text=""
                     TextColor="Red"
-                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
                     x:Name="lblmensajeclave"
                     />
@@ -149,11 +150,14 @@
             </StackLayout>
  
             <StackLayout Grid.Row="6" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=200,Android=300}" Orientation="Vertical">
-                <Button Text="Registrar Usuario"
-                        TextColor="{OnPlatform iOS=Black}"
-                        FontSize="{OnPlatform Android=12, iOS=12}"
-                        BackgroundColor="#007bff"
-                        x:Name="Registrar"
+               
+                <Button Text="Registrar"
+                        TextColor="White"
+                        FontSize="{OnPlatform Android=15, iOS=12}"
+                        BackgroundColor="Transparent"
+                        BorderColor="ForestGreen"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
                         Clicked="store"
                         />
             </StackLayout>

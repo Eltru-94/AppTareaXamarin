@@ -89,5 +89,10 @@ namespace AppDemoF.Views
             correo = auxcorreo.Substring(1);
            
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

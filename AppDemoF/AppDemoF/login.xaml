@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppDemoF.login">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Text="Registrar" Clicked="Btn_ViewRegistrar" Priority="0"/>
-    </ContentPage.ToolbarItems>
+             x:Class="AppDemoF.login"
+              Background="#112B47">
+  
     <ContentPage.Content>
         <Grid RowSpacing="{OnPlatform iOS=25, Android=20}">
 
@@ -20,25 +19,29 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackLayout Grid.Row="1">
-                
-
-            </StackLayout>
-            <StackLayout Grid.Row="2" HorizontalOptions="Center"  Orientation="Vertical">
+            <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
                 <Label
-                    Text="Sign up"
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=30,iOS=23}"
+                    Text="Login"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=50,iOS=23}"
                     WidthRequest="300"
+                    FontAttributes="Bold"
+                    x:Name="lblmensaje"
+                    XAlign="Center"
                     />
 
             </StackLayout>
+            <StackLayout Grid.Row="2">
+
+                <Image Source="https://www.metabec.com/wp-content/uploads/2016/12/puce-ibarra-300.png"/>
+            </StackLayout>
+          
             <StackLayout Grid.Row="3" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
 
                 <Label
-                    Text="Email : "
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=15}"
+                    Text="Emai : "
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
                
                 />
                 <Frame
@@ -47,9 +50,9 @@
                 CornerRadius="{OnPlatform Android=7}"
                 >
                     <Entry
-                    Placeholder="email@gmail.com"
+                    Placeholder="Ingrese el email"
                     MaxLength="25"
-                    FontSize="{OnPlatform Android=15, iOS=16}"
+                    FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtemail"
                     />
                     
@@ -58,7 +61,7 @@
                 <Label
                     Text=""
                     TextColor="Red"
-                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
                     x:Name="lblmensajecorreo"
                     />
@@ -67,8 +70,8 @@
             <StackLayout Grid.Row="4" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
                 <Label
                     Text="Password : "
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=15}"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
                
                     />
                 <Frame
@@ -80,7 +83,7 @@
                     Placeholder="********"
                     MaxLength="25"
                     IsPassword="True"
-                    FontSize="{OnPlatform Android=15, iOS=16}"
+                    FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtpassword"
                     />
 
@@ -88,7 +91,7 @@
                 <Label
                     Text=""
                     TextColor="Red"
-                    FontSize="{OnPlatform Android=12,iOS=23}"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
                     x:Name="lblmensajeclave"
                     />
@@ -97,10 +100,24 @@
         
             <StackLayout Grid.Row="5" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
                 <Button Text="Iniciar Sesion"
-                        TextColor="{OnPlatform iOS=Black}"
+                        TextColor="White"
                         FontSize="{OnPlatform Android=15, iOS=12}"
-                        BackgroundColor="#007bff"
+                        BackgroundColor="Transparent"
+                        BorderColor="ForestGreen"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
                         Clicked="Button_Clicked"
+                        />
+                <Button Text="Registrar"
+                        TextColor="White"
+                        FontSize="{OnPlatform Android=15, iOS=12}"
+                        BackgroundColor="Transparent"
+                        BorderColor="ForestGreen"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        Clicked="Btn_ViewRegistrar"
+                     
+
                         />
             </StackLayout>
             

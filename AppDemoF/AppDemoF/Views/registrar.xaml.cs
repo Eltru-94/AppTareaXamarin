@@ -55,7 +55,7 @@ namespace AppDemoF.Views
                         lblmensajeapellido.Text = a[1];
                         break;
                     case "error":
-                        await DisplayAlert("Error Login", a[1], "Okay", "Cancel");
+                        await DisplayAlert("Error Registar", a[1], "Okay");
 
                         break;
                     case "user":

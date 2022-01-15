@@ -61,6 +61,44 @@ namespace AppDemoF.Services
 
         }
 
+        public async Task<string> selecTaskId(string id_task)
+        {
+            HttpClient cliente = new HttpClient();
+            var url = "https://cooperativa-pugacho.herokuapp.com/api/task/selectIdTask/" + id_task;
+
+
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
+            var client = new HttpClient();
+            var response = await client.SendAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+
+            return content;
+
+        }
+
+        public async Task<string> updateTask(string task, string descripcion, string id_task)
+        {
+
+            var url = "https://cooperativa-pugacho.herokuapp.com/api/task/update";
+
+
+            var keyValues = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("task",task),
+                new KeyValuePair<string, string>("descripcion",descripcion),
+                new KeyValuePair<string, string>("id_task",id_task),
+
+            };
+            var request = new HttpRequestMessage(HttpMethod.Post, url);
+
+            request.Content = new FormUrlEncodedContent(keyValues);
+            var client = new HttpClient();
+            var response = await client.SendAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+
+            return content;
+        }
+
 
     }
 }

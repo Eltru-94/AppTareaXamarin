@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDemoF.Views.editTareas"
+              Background="#112B47">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Order="Primary" Text="Inicio" x:Name="toobarCarrera2" Priority="0" Clicked="Btn_inicio"/>
+        <ToolbarItem Order="Primary" Text="Tareas" x:Name="toobarCarrera3" Priority="0" Clicked="Btn_tareas" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid RowSpacing="{OnPlatform iOS=20, Android=20}">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
+                    <Label
+                    Text="Actualizar Tarea"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=50,iOS=23}"
+                    WidthRequest="300"
+                    FontAttributes="Bold"
+                    XAlign="Center"
+                    />
+                </StackLayout>
+                <StackLayout Grid.Row="2" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+
+                    <Label
+                    Text="Tarea : "
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
+                />
+                    <Frame
+                HasShadow="{OnPlatform Android=true, iOS=false}"
+                Padding="{OnPlatform Android=0, iOS=0}"
+                CornerRadius="{OnPlatform Android=7}"
+                >
+                        <Entry
+                    Placeholder="Ingrese la tarea"
+                    MaxLength="25"
+                    FontSize="{OnPlatform Android=20, iOS=16}"
+                    x:Name="txttarea"
+                        
+                    />
+
+                    </Frame>
+                    <Label
+                    Text=""
+                    TextColor="Red"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
+                    WidthRequest="300"
+                    x:Name="lblmensajetarea"
+                    />
+
+                </StackLayout>
+                <StackLayout Grid.Row="3" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+
+                    <Label
+                    Text="Descripción : "
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=20}"
+               
+                />
+
+                    <Frame
+                HasShadow="{OnPlatform Android=true, iOS=false}"
+                Padding="{OnPlatform Android=0, iOS=0}"
+                CornerRadius="{OnPlatform Android=7}"
+                >
+
+                        <Editor Text=""  HeightRequest="100" x:Name="txtadescripcion" FontSize="{OnPlatform Android=20,iOS=23}" />
+
+                    </Frame>
+                    <Label
+                    Text=""
+                    TextColor="Red"
+                    FontSize="{OnPlatform Android=15,iOS=23}"
+                    WidthRequest="300"
+                    x:Name="lblmensajedescripcionedit"
+                    />
+
+                </StackLayout>
+
+
+
+                <StackLayout Grid.Row="4" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=200,Android=300}" Orientation="Vertical">
+
+                    <Button Text="Actualizar Tarea"
+                        TextColor="White"
+                        FontSize="{OnPlatform Android=15, iOS=12}"
+                        BackgroundColor="Transparent"
+                        BorderColor="ForestGreen"
+                        BorderWidth="1.5"
+                        CornerRadius="50"
+                        Clicked="Btn_Actualizar"
+                        />
+                </StackLayout>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

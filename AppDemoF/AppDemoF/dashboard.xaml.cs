@@ -35,7 +35,7 @@ namespace AppDemoF
         private async void Btn_close(object sender, EventArgs e)
         {
 
-            bool answer = await DisplayAlert("Esta seguro?", "Cerrar Sesión", "Yes", "No");
+            bool answer = await DisplayAlert("Esta seguro?", "Cerrar Sesión", "Si", "No");
             if (answer)
             {
                 await Navigation.PushAsync(new login());
@@ -73,8 +73,9 @@ namespace AppDemoF
             nombre = auxnombre.Substring(1);
             apellido = auxapellido.Substring(1);
             correo = auxcorreo.Substring(1);
-            lblmensajeUser.Text = "Nombre : "+nombre + " " + apellido;
-            lblmensajeUseraux.Text = "Correo : "+correo;
+            string aux = nombre + " " + apellido;
+            lblmensajeUser.Text = aux.ToUpper();
+            lblmensajeUseraux.Text = correo;
         }
     }
 }

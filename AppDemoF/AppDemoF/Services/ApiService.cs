@@ -57,8 +57,8 @@ namespace AppDemoF.Services
             {
                 new KeyValuePair<string, string>("correo",email),
                 new KeyValuePair<string, string>("clave",password),
-                new KeyValuePair<string, string>("nombre",email),
-                new KeyValuePair<string, string>("apellido",password),
+                new KeyValuePair<string, string>("nombre",nombre),
+                new KeyValuePair<string, string>("apellido",apellido),
             };
             var request = new HttpRequestMessage(HttpMethod.Post, url);
 

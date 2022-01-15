@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppDemoF.dashboard">
+             x:Class="AppDemoF.dashboard"
+             Background="#112B47">
     <ContentPage.ToolbarItems>
         
         <ToolbarItem Order="Primary" Text="Inicio" x:Name="toobarCarrera2" Priority="0" Clicked="Btn_inicio"/>
@@ -23,38 +24,31 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical" Padding="{OnPlatform Android=20, iOS=0}">
-                <Label
-                    Text="Bienvenido"
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=30,iOS=23}"
-                    WidthRequest="300"
-                    FontAttributes="Bold, Italic"
-                    x:Name="lblmensaje"
-                    XAlign="Center"
-                    />
+           
+            <Image Source="https://tiempodenegocios.com/wp-content/uploads/2017/10/lista-de-tareas.jpg" Aspect="AspectFill" WidthRequest="900" HeightRequest="300"/>
 
+            <StackLayout Grid.Row="1">
+                <Label Text="Bienvenido"  TextColor="Gray" FontAttributes="Bold"
+                    XAlign="Center" FontSize="{OnPlatform Android=50,iOS=23}"
+                    />
+                <Label Text="" TextColor="Black" FontAttributes="None"
+                    XAlign="Center" FontSize="{OnPlatform Android=20,iOS=23}"
+                     x:Name="lblmensajeUser"
+                    />
+        
             </StackLayout>
-            <StackLayout Grid.Row="2" HorizontalOptions="Center"  Orientation="Vertical" >
+
+
+            <StackLayout Grid.Row="2" HorizontalOptions="Center"  Orientation="Vertical">
 
                 <Label
                     Text=""
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=15,iOS=23}"
+                    TextColor="ForestGreen"
+                 
                     WidthRequest="300"
-                    FontAttributes="Bold, Italic"
-                    x:Name="lblmensajeUser"
-                    />
-            </StackLayout>
-            <StackLayout Grid.Row="3" HorizontalOptions="Center"  Orientation="Vertical">
-
-                <Label
-                    Text=""
-                    TextColor="Black"
-                    FontSize="{OnPlatform Android=15,iOS=23}"
-                    WidthRequest="300"
-                    FontAttributes="Bold, Italic"
+                    FontAttributes="Italic"
                     x:Name="lblmensajeUseraux"
+                     XAlign="Center" FontSize="{OnPlatform Android=15,iOS=23}"
                     />
             </StackLayout>
 

@@ -42,7 +42,7 @@ namespace AppDemoF
                         lblmensajeclave.Text = a[1];
                         break;
                     case "error":
-                        await DisplayAlert("Error Login", a[1],"Okay", "Cancel");
+                        await DisplayAlert("Error Login", a[1],"OK");
 
                         break;
                     case "user":

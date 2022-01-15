@@ -3,6 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDemoF.App">
     <Application.Resources>
+        <x:String x:Key="User">&#xF234;</x:String>
+        <x:String x:Key="Trash">&#xE801;</x:String>
 
+        <x:String x:Key="Pencil">&#xE802;</x:String>
+        <x:String x:Key="More">&#xE801;</x:String>
+
+        <x:String x:Key="Facebook">&#xF301;</x:String>
+        <x:String x:Key="Gitname">&#xF307;</x:String>
+        <x:String x:Key="Gitlog">&#xF308;</x:String>
+
+        <x:String x:Key="linked">&#xF31B;</x:String>
     </Application.Resources>
 </Application>
