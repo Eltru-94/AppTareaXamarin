@@ -1,8 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppDemoF.Views.registrar"
+             x:Class="AppDemoF.Views.Agenda.addAgenda"
               Background="#112B47">
+    <ContentPage.ToolbarItems>
+
+
+        <ToolbarItem Order="Primary" Text="Agenda" x:Name="toobarCarrera3" Priority="0" Clicked="Btn_agenda"/>
+        
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid RowSpacing="{OnPlatform iOS=20, Android=20}">
 
@@ -15,23 +21,18 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-       
+
             <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
                 <Label
-                    Text="Registrar"
+                    Text="Registrar Contacto"
                     TextColor="Gray"
                     FontSize="{OnPlatform Android=50,iOS=23}"
                     WidthRequest="300"
-                    FontAttributes="Bold, Italic"
+                    FontAttributes="Bold"
                     XAlign="Center"
                     />
             </StackLayout>
@@ -54,6 +55,7 @@
                     TextColor="Black"
                     FontSize="{OnPlatform Android=20, iOS=16}"
                     x:Name="txtnombre"
+                        
                     />
 
                 </Frame>
@@ -69,23 +71,25 @@
             <StackLayout Grid.Row="3" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
 
                 <Label
-                    Text="Apellido : "
+                    Text="Telefono : "
                     TextColor="Gray"
                     FontSize="{OnPlatform Android=20}"
                
                 />
+
                 <Frame
                 HasShadow="{OnPlatform Android=true, iOS=false}"
                 Padding="{OnPlatform Android=0, iOS=0}"
                 CornerRadius="{OnPlatform Android=7}"
                 >
                     <Entry
-                    Placeholder="Ingrese el apellido"
+                    Placeholder="Ingrese el telefono"
                     MaxLength="25"
                     PlaceholderColor="Gray"
                     TextColor="Black"
                     FontSize="{OnPlatform Android=20, iOS=16}"
-                    x:Name="txtapellido"
+                    x:Name="txttelefono"
+                        
                     />
 
                 </Frame>
@@ -94,30 +98,34 @@
                     TextColor="Red"
                     FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
-                    x:Name="lblmensajeapellido"
+                    x:Name="lblmensajetelefono"
                     />
 
+
             </StackLayout>
+
             <StackLayout Grid.Row="4" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
 
                 <Label
-                    Text="Cedula : "
+                    Text="Direccion : "
                     TextColor="Gray"
                     FontSize="{OnPlatform Android=20}"
                
                 />
+
                 <Frame
                 HasShadow="{OnPlatform Android=true, iOS=false}"
                 Padding="{OnPlatform Android=0, iOS=0}"
                 CornerRadius="{OnPlatform Android=7}"
                 >
                     <Entry
-                    Placeholder="Ingrese la cedula"
+                    Placeholder="Ingrese la direccion"
                     MaxLength="25"
                     PlaceholderColor="Gray"
                     TextColor="Black"
                     FontSize="{OnPlatform Android=20, iOS=16}"
-                    x:Name="txtcedula"
+                    x:Name="txtdireccion"
+                        
                     />
 
                 </Frame>
@@ -126,117 +134,27 @@
                     TextColor="Red"
                     FontSize="{OnPlatform Android=15,iOS=23}"
                     WidthRequest="300"
-                    x:Name="lblmensajecedula"
+                    x:Name="lblmensajedireccion"
                     />
 
-            </StackLayout>
-            <StackLayout Grid.Row="5" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
-                <Label
-                    Text="Correo : "
-                    TextColor="Gray"
-                    FontSize="{OnPlatform Android=20}"
-               
-                    />
-                <Frame
-                HasShadow="{OnPlatform Android=true, iOS=false}"
-                Padding="{OnPlatform Android=0, iOS=0}"
-                CornerRadius="{OnPlatform Android=7}"
-                >
-                    <Entry
-                    Placeholder="Correo"
-                    FontSize="{OnPlatform Android=20, iOS=16}"
-                    x:Name="txtcorreo"
-                    PlaceholderColor="Gray"
-                    TextColor="Black"
-                    />
-                    
-
-                </Frame>
-                <Label
-                    Text=""
-                    TextColor="Red"
-                    FontSize="{OnPlatform Android=15,iOS=23}"
-                    WidthRequest="300"
-                    x:Name="lblmensajecorreo"
-                    />
-
-            </StackLayout>
-            <StackLayout Grid.Row="6" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
-                <Label
-                    Text="Contraseña : "
-                    TextColor="Gray"
-                    FontSize="{OnPlatform Android=20}"
-                    />
-                <Frame
-                HasShadow="{OnPlatform Android=true, iOS=false}"
-                Padding="{OnPlatform Android=0, iOS=0}"
-                CornerRadius="{OnPlatform Android=7}"
-                >
-                    <Entry
-                    Placeholder="Ingrese la contraseña"
-                    MaxLength="25"
-                    IsPassword="True"
-                    FontSize="{OnPlatform Android=20, iOS=16}"
-                    x:Name="txtpassword"
-                    PlaceholderColor="Gray"
-                    TextColor="Black"    
-                    />
-                    
-                </Frame>
-                <Label
-                    Text=""
-                    TextColor="Red"
-                    FontSize="{OnPlatform Android=15,iOS=23}"
-                    WidthRequest="300"
-                    x:Name="lblmensajeclave"
-                    />
-
-            </StackLayout>
-            <StackLayout Grid.Row="7" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
-                <Label
-                    Text="Confir Contraseña : "
-                    TextColor="Gray"
-                    FontSize="{OnPlatform Android=20}"
-                    />
-                <Frame
-                HasShadow="{OnPlatform Android=true, iOS=false}"
-                Padding="{OnPlatform Android=0, iOS=0}"
-                CornerRadius="{OnPlatform Android=7}"
-                >
-                    <Entry
-                    Placeholder="Confirme la contraseña"
-                    MaxLength="25"
-                    IsPassword="True"
-                    FontSize="{OnPlatform Android=20, iOS=16}"
-                    x:Name="txtcpassword"
-                    PlaceholderColor="Gray"
-                    TextColor="Black"    
-                    />
-
-                </Frame>
-                <Label
-                    Text=""
-                    TextColor="Red"
-                    FontSize="{OnPlatform Android=15,iOS=23}"
-                    WidthRequest="300"
-                    x:Name="lblmensajecclave"
-                    />
 
             </StackLayout>
 
-            <StackLayout Grid.Row="8" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=200,Android=300}" Orientation="Vertical">
-               
-                <Button Text="Registrar"
+
+            <StackLayout Grid.Row="5" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=200,Android=300}" Orientation="Vertical">
+
+                <Button Text="Registrar Tarea"
                         TextColor="White"
                         FontSize="{OnPlatform Android=15, iOS=12}"
                         BackgroundColor="Transparent"
                         BorderColor="ForestGreen"
                         BorderWidth="1.5"
                         CornerRadius="50"
-                        Clicked="store"
+                        Clicked="Btn_store"
                         />
             </StackLayout>
 
         </Grid>
     </ContentPage.Content>
+
 </ContentPage>

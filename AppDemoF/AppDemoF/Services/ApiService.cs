@@ -47,7 +47,7 @@ namespace AppDemoF.Services
 
             return content;
         }
-        public async Task<string> registrarUser(string email, string password,string nombre,string apellido)
+        public async Task<string> registrarUser(string email, string password,string nombre,string apellido,string cedula, string cpassword)
         {
 
             var url = "https://cooperativa-pugacho.herokuapp.com/api/user/register";
@@ -57,6 +57,34 @@ namespace AppDemoF.Services
             {
                 new KeyValuePair<string, string>("correo",email),
                 new KeyValuePair<string, string>("clave",password),
+                new KeyValuePair<string, string>("cclave",cpassword),
+                new KeyValuePair<string, string>("cedula",cedula),
+                new KeyValuePair<string, string>("nombre",nombre),
+                new KeyValuePair<string, string>("apellido",apellido),
+            };
+            var request = new HttpRequestMessage(HttpMethod.Post, url);
+
+            request.Content = new FormUrlEncodedContent(keyValues);
+            var client = new HttpClient();
+            var response = await client.SendAsync(request);
+            var content = await response.Content.ReadAsStringAsync();
+
+            return content;
+        }
+
+        public async Task<string> updateUser(string email, string password, string nombre, string apellido, string cedula, string cpassword,string id_user)
+        {
+
+            var url = "https://cooperativa-pugacho.herokuapp.com/api/user/update";
+
+
+            var keyValues = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>("id_user",id_user),
+                new KeyValuePair<string, string>("correo",email),
+                new KeyValuePair<string, string>("clave",password),
+                new KeyValuePair<string, string>("cclave",cpassword),
+                new KeyValuePair<string, string>("cedula",cedula),
                 new KeyValuePair<string, string>("nombre",nombre),
                 new KeyValuePair<string, string>("apellido",apellido),
             };

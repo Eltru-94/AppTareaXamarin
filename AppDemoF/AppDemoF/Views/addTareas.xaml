@@ -81,7 +81,7 @@
                 CornerRadius="{OnPlatform Android=7}"
                 >
 
-                    <Editor Text=""  HeightRequest="100" x:Name="txtadescripcion" FontSize="{OnPlatform Android=20,iOS=23}" />
+                    <Editor Text="" TextColor="Black" HeightRequest="100" x:Name="txtadescripcion" FontSize="{OnPlatform Android=20,iOS=23}" />
 
                 </Frame>
                 <Label

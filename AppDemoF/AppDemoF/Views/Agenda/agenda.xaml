@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppDemoF.Views.Agenda.agenda"
+             Background="#112B47">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Order="Primary" Text="Inicio" x:Name="toobarCarrera2" Priority="0" Clicked="Btn_inicio"/>
+        <ToolbarItem Order="Primary" Text="Agenda" x:Name="toobarCarrera3" Priority="0" Clicked="Btn_agenda"/>
+        <ToolbarItem Order="Primary" Text="Nuevo Contacto" x:Name="toobarCarrera1" Priority="0" Clicked="Btn_addagenda"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <Grid RowSpacing="{OnPlatform iOS=20, Android=20}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
+                <Label
+                    Text="Agenda"
+                    TextColor="Gray"
+                    FontSize="{OnPlatform Android=50,iOS=23}"
+                    WidthRequest="300"
+                    FontAttributes="Bold"
+                    XAlign="Center"
+                    />
+            </StackLayout>
+            <Grid Grid.Row="2" Margin="0,30" ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Grid.Column="0">
+                    <Label Text="Nombre" FontAttributes="Bold"
+                    XAlign="Center" FontSize="{OnPlatform Android=20,iOS=23}"
+                    />
+
+                </StackLayout>
+                <StackLayout Grid.Column="1">
+                    <Label Text="Contacto" FontAttributes="Bold"
+                    XAlign="Center" FontSize="{OnPlatform Android=20,iOS=23}"
+                    />
+
+                </StackLayout>
+                <StackLayout Grid.Column="2">
+                    <Label Text="Acción" FontAttributes="Bold"
+                    XAlign="Center" FontSize="{OnPlatform Android=20,iOS=23}"
+                    />
+
+                </StackLayout>
+            </Grid>
+            <StackLayout Grid.Row="3" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=300,Android=300}" Orientation="Vertical">
+
+                <ListView x:Name="listAgenda" >
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" >
+
+                                    <Label Text="{Binding nombre}" TextColor="#f35e20" FontSize="15"/>
+                                    <Label Text="{Binding telefono}" TextColor="#f35e20" FontSize="15"  />
+                                    <Button Text="{StaticResource Trash}"
+                                    TextColor="{OnPlatform iOS=Black}"
+                                    FontSize="{OnPlatform Android=9, iOS=12}"
+                                    BackgroundColor="#dc3545"
+                                    FontFamily="fontello"
+                                    HorizontalOptions="EndAndExpand"
+                                    BorderColor="White"
+                                    BorderWidth="1"
+                                    CornerRadius="7"
+                                    WidthRequest="30"
+                                    HeightRequest="20"
+                                    BindingContext="{Binding id_agenda}"
+                                   Clicked="Btn_deleteAgenda"
+                                            
+                                    />
+                                    <Button Text="{StaticResource Pencil}"
+                                    TextColor="{OnPlatform iOS=Black}"
+                                    FontSize="{OnPlatform Android=9, iOS=12}"
+                                    BackgroundColor="#007bff"
+                                    FontFamily="fontello"
+                                    HorizontalOptions="EndAndExpand"
+                                    BorderColor="White"
+                                    BorderWidth="1"
+                                    CornerRadius="7"
+                                    WidthRequest="30"
+                                    HeightRequest="20"
+                                    BindingContext="{Binding id_agenda}"
+                                    Clicked="Btn_updateAgenda"           
+                                    />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

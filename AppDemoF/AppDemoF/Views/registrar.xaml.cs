@@ -27,9 +27,8 @@ namespace AppDemoF.Views
 
             string nombre = txtnombre.Text;
             string apellido = txtapellido.Text;
-            string correo = txtcorreo.Text;
-            string clave = txtpassword.Text;
-            string mensaje= await ModelUser.registrarUser(correo, clave, nombre, apellido);
+            
+            string mensaje= await ModelUser.registrarUser(txtcorreo.Text,txtpassword.Text,txtnombre.Text,txtapellido.Text,txtcedula.Text,txtcpassword.Text);
             JObject json = JObject.Parse(mensaje);
             limpiarErrorCampos();
             foreach (var datos in json)
@@ -46,6 +45,10 @@ namespace AppDemoF.Views
 
                         lblmensajeclave.Text = a[1];
                         break;
+                    case "cclave":
+
+                        lblmensajecclave.Text = a[1];
+                        break;
                     case "nombre":
 
                         lblmensajenombre.Text = a[1];
@@ -53,6 +56,10 @@ namespace AppDemoF.Views
                     case "apellido":
 
                         lblmensajeapellido.Text = a[1];
+                        break;
+                    case "cedula":
+
+                        lblmensajecedula.Text = a[1];
                         break;
                     case "error":
                         await DisplayAlert("Error Registar", a[1], "Okay");
@@ -90,6 +97,8 @@ namespace AppDemoF.Views
             lblmensajecorreo.Text = "";
             lblmensajeapellido.Text = "";
             lblmensajenombre.Text = "";
+            lblmensajecclave.Text = "";
+            lblmensajecedula.Text = "";
             
         }
 

@@ -43,7 +43,19 @@ namespace AppDemoF
             
             
         }
-        
+
+        private async void Btn_edit(object sender, EventArgs e)
+        {
+
+            bool answer = await DisplayAlert("Esta seguro?", "Editar", "Si", "No");
+            if (answer)
+            {
+                await Navigation.PushAsync(new Views.User.editUser(cadena));
+            }
+
+
+        }
+
 
         private async void Btn_inicio(object sender, EventArgs e)
         {
@@ -51,6 +63,15 @@ namespace AppDemoF
             
                 await Navigation.PushAsync(new dashboard(cadena));
         }
+
+
+        private async void Btn_agenda(object sender, EventArgs e)
+        {
+
+
+            await Navigation.PushAsync(new Views.Agenda.agenda(cadena));
+        }
+
         private async void Btn_tareas(object sender, EventArgs e)
         {
 

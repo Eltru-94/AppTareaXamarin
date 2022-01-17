@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppDemoF.Views.registrar"
+             x:Class="AppDemoF.Views.User.editUser"
               Background="#112B47">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Order="Primary" Text="Inicio" x:Name="toobarCarrera2" Priority="0" Clicked="Btn_inicio"/>
+     
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <Grid RowSpacing="{OnPlatform iOS=20, Android=20}">
 
@@ -24,10 +29,10 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-       
+
             <StackLayout Grid.Row="1" HorizontalOptions="Center"  Orientation="Vertical">
                 <Label
-                    Text="Registrar"
+                    Text="Editar"
                     TextColor="Gray"
                     FontSize="{OnPlatform Android=50,iOS=23}"
                     WidthRequest="300"
@@ -149,7 +154,7 @@
                     PlaceholderColor="Gray"
                     TextColor="Black"
                     />
-                    
+
 
                 </Frame>
                 <Label
@@ -181,7 +186,7 @@
                     PlaceholderColor="Gray"
                     TextColor="Black"    
                     />
-                    
+
                 </Frame>
                 <Label
                     Text=""
@@ -225,15 +230,15 @@
             </StackLayout>
 
             <StackLayout Grid.Row="8" HorizontalOptions="Center" WidthRequest="{OnPlatform iOS=200,Android=300}" Orientation="Vertical">
-               
-                <Button Text="Registrar"
+
+                <Button Text="Guardar"
                         TextColor="White"
                         FontSize="{OnPlatform Android=15, iOS=12}"
                         BackgroundColor="Transparent"
                         BorderColor="ForestGreen"
                         BorderWidth="1.5"
                         CornerRadius="50"
-                        Clicked="store"
+                        Clicked="update"
                         />
             </StackLayout>
 
